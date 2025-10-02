@@ -1,0 +1,435 @@
+/* Основные базовые стили */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background: #f0f7f1;
+  color: #2b2b2b;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+body > main.container {
+  flex: 1 0 auto;
+  width: 90%;
+  max-width: 1100px;
+  margin: 2rem auto 3rem;
+}
+
+
+h2, h3, h4, h5, h6 {
+  color: #2e7d32; 
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+}
+
+h1 {
+  color: #b1c6b2; 
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+}
+
+h1 {
+  font-size: 2.2rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+}
+
+h3 {
+  font-size: 1.4rem;
+}
+
+h4 {
+  font-size: 1.2rem;
+}
+
+h5 {
+  font-size: 1rem;
+}
+
+h6 {
+  font-size: 0.9rem;
+}
+
+footer {
+  flex-shrink: 0;
+  background-color: #2c2c2c;
+  color: #bbb;
+  padding: 1.8rem 0;
+  text-align: center;
+  font-size: 0.9rem;
+  box-shadow: inset 0 1px 5px rgba(255,255,255,0.1);
+}
+
+footer a {
+  color: #81c784;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+footer a:hover,
+footer a:focus {
+  text-decoration: underline;
+}
+
+/* Шапка сайта */
+header {
+  background: linear-gradient(135deg, #31be6f 0%, #315e33 100%);
+  color: white;
+  padding: 0.3rem 0.5rem;
+  box-shadow: 0 4px 12px rgba(50, 115, 65, 0.6);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  animation: fadeInDown 1s ease forwards;
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 1rem;
+  gap: 1rem;
+}
+
+.logo-container {
+  flex-shrink: 0;
+  margin-right: 0.8rem;
+  display: flex;
+  align-items: center;
+  height: 40px;
+}
+
+.logo {
+    margin-top: 1rem;
+  height: 90px;
+  width: auto;
+  user-select: none;
+  display: block;
+}
+
+header h1 {
+  cursor: pointer;
+  transition: color 0.4s ease, text-shadow 0.4s ease;
+  line-height: 1;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+header h1:hover,
+header h1:focus {
+  color: #307e47;
+  text-shadow: 0 0 15px #0c4b17;
+  outline: none;
+}
+
+.tagline {
+  font-style: normal;
+  font-size: 0.9rem;
+  color: #e6f2decc;
+  flex-grow: 1;
+  user-select: none;
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0;
+}
+
+/* Навигация */
+nav {
+  position: relative;
+  flex-shrink: 0;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  max-height: 100%;
+  border: none;
+}
+
+nav li {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  border: 1px solid transparent;
+}
+
+nav li:hover,
+nav li:focus-within {
+  background-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 0 10px #c5e1a5;
+  border-color: #8bc34a;
+  outline: none;
+}
+
+nav a {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.05rem;
+  padding: 0.5rem 1.1rem;
+  border-radius: 12px;
+  transition: color 0.3s ease;
+}
+
+nav a:hover,
+nav a:focus {
+  color: #ffe082;
+  outline: none;
+}
+
+/* Анимация и стили для кликабельных блоков растений */
+a.plant-item {
+  background: white;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+a.plant-item:hover,
+a.plant-item:focus {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  outline: none;
+}
+
+a.plant-item img {
+  max-width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+a.plant-item:hover img,
+a.plant-item:focus img {
+  transform: scale(1.05);
+}
+
+/* Сетка растений */
+.plant-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* Заголовок для растений */
+.plants-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Вертикальный список советов */
+.tips-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.tips-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+/* Отдельный совет - фото слева, текст справа */
+.tip-item {
+  display: flex;
+  align-items: flex-start;
+  background: white;
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  gap: 1.2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tip-item:hover,
+.tip-item:focus-within {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  outline: none;
+}
+
+.tip-item img {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.tip-item:hover img,
+.tip-item:focus-within img {
+  transform: scale(1.05);
+}
+
+.tip-text {
+  flex-grow: 1;
+}
+
+.tip-text h3 {
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+  color: #2e7d32;
+}
+
+.tip-text ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* Стили для идей: фиксированные одинаковые размеры фото */
+.idea-img {
+  width: 280px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-top: 10px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+  transition: transform 0.3s ease;
+}
+
+.idea-img:hover,
+.idea-img:focus {
+  transform: scale(1.05);
+  outline: none;
+}
+
+/* Немного уменьшим и оптимизируем отступы для section ideas */
+#ideas article {
+  margin-bottom: 3rem;
+}
+
+/* Заголовки в разделе Идеи */
+#ideas h2 {
+  color: #2e7d32;
+  margin-bottom: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+#ideas h3 {
+  color: #367c2b;
+  margin-bottom: 0.8rem;
+}
+
+/* Мобильное меню и адаптация */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 28px;
+  height: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1100;
+}
+
+.menu-toggle span {
+  width: 28px;
+  height: 2px;
+  background: white;
+  border-radius: 3px;
+  transition: all 0.3s linear;
+  position: relative;
+}
+
+nav.open ul {
+  max-height: 500px;
+}
+
+@media (max-width: 840px) {
+  .menu-toggle {
+    display: flex;
+  }
+  nav ul {
+    flex-direction: column;
+    gap: 0.8rem;
+    max-height: 0;
+    overflow: hidden;
+    border: none;
+  }
+  nav li {
+    background-color: rgba(255, 255, 255, 0.25);
+    border: none;
+    box-shadow: none;
+  }
+  nav li:hover,
+  nav li:focus-within {
+    background-color: rgba(255, 255, 255, 0.45);
+    box-shadow: none;
+    border: none;
+  }
+  nav a {
+    padding: 0.7rem 1.5rem;
+    font-size: 1.1rem;
+  }
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  .logo-container {
+    height: auto;
+    margin-right: 0;
+  }
+  .tagline {
+    margin: 0.3rem 0 1rem 0;
+    flex-grow: 0;
+  }
+}
+
+/* Гамбургер меню: анимация */
+.menu-toggle.open span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 7px;
+  position: relative;
+}
+.menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.open span:nth-child(3) {
+  transform: rotate(-45deg);
+  top: -7px;
+  position: relative;
+}
